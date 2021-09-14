@@ -29,6 +29,9 @@ $ cd aegir-backend
 # Install dependencies
 $ yarn install
 
+# copy the file .env.example you already have the necessary data to run a development environment
+$ cp .env.example .env
+
 # Run the containers
 $ sudo docker-composer up -d
 ```
