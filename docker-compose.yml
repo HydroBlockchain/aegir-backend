@@ -1,0 +1,45 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file: .env
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    volumes:
+      - ./:/app
+
+  mongo:
+    image: mongo:5.0
+    restart: always
+    expose:
+      - $DB_PORT
+    volumes:
+      - "mongodata_aegir:/data/db"
+    # environment:
+      # If both variables are present then MongoDB will start with authentication enabled (mongod --auth). For a development environment it is not required to use the variables below. Warning: Authentication and better security must be applied for production
+      # MONGO_INITDB_ROOT_USERNAME: $DB_USERNAME
+      # MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:$DB_PORT
+      # If MongoDB enables authentication (mongod --auth) you must uncomment the lines below
+      # ME_CONFIG_MONGODB_ADMINUSERNAME: $DB_USERNAME
+      # ME_CONFIG_MONGODB_ADMINPASSWORD: $DB_PASSWORD
+      # ME_CONFIG_MONGODB_URL: mongodb://$DB_USERNAME:$DB_PASSWORD@mongo:$DB_PORT
+
+volumes: 
+  mongodata_aegir:

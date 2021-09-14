@@ -1,0 +1,8 @@
+.git
+.gitignore
+vendor
+.dockerignore
+Dockerfile
+.gitlab-ci.yml
+node_modules
+npm-debug.log
