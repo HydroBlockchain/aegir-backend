@@ -7,19 +7,22 @@
     "build": "tsc",
     "hello": "echo 'hello worl!'",
     "start": "node dist/index.js",
+    "doc": "jsdoc -c jsdoc.json",
     "dev": "tsc-watch --onSuccess \"node dist/index.js\""
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "ethers": "^5.4.7",
     "express": "~4.16.1",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.5",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "web3.storage": "^3.3.2"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.1",
@@ -30,6 +33,7 @@
     "@types/morgan": "^1.9.3",
     "@types/passport": "^1.0.7",
     "@types/passport-jwt": "^3.0.6",
+    "jsdoc": "^3.6.7",
     "tsc-watch": "^4.5.0",
     "typescript": "^4.4.2"
   }

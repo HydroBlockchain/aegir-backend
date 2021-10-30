@@ -1,5 +1,5 @@
 import cors from "cors";
-import './libs/database';
+// import './libs/database';
 import helmet from "helmet";
 import morgan from "morgan";
 import routes from "./routes";
