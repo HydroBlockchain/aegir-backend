@@ -2,12 +2,14 @@ import cors from "cors";
 // import './libs/database';
 import helmet from "helmet";
 import morgan from "morgan";
+import dotenv from 'dotenv';
 import routes from "./routes";
 import passport from 'passport';
 import express, { Request, Response } from 'express';
 import passportMiddleware from './middlewares/passport';
 
 // initializations
+dotenv.config();
 const app = express();
 
 // settings
