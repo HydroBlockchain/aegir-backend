@@ -4,6 +4,7 @@ import { Router, Express } from 'express';
 import userRoutes from './userRoute';
 import authRoutes from './authRoutes';
 import walletRoute from './walletRoute';
+import uysocialRoute from './uysocialRoute';
 
 export default (app: Express) => {
   const router = Router();
@@ -12,5 +13,6 @@ export default (app: Express) => {
     authRoutes(router),
     userRoutes(router),
     walletRoute(router),
+    uysocialRoute(router),
   );
 }

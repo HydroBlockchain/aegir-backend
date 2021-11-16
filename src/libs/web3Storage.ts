@@ -28,6 +28,6 @@ export async function deleteFile(cid: string) {
 }
 
 export async function retrieveFiles(cid: string): Promise<Web3Response | null> {
-  const client = makeStorageClient()
+  const client = makeStorageClient();
   return await client.get(cid);
 }
